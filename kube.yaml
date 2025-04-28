@@ -1,0 +1,11 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: turnstile-verification
+#  global: true # Apply globally if needed
+config:
+  turnstile_secret_key: YOUR_CLOUDFLARE_TURNSTILE_SECRET_KEY # Use Kubernetes secrets for this!
+  # token_location: header
+  # token_name: Cf-Turnstile-Response
+  # remote_ip_location: pdk
+plugin: turnstile # Must match the name returned by server.StartServer
